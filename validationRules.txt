@@ -1,0 +1,9 @@
+The rules the passwords need to match are:
+
+- Minimum length is 5;
+- Maximum length is 128;
+- Needs at least one number
+- Needs at least one uppercase letter
+- Needs at least one special character
+- Can't contain spaces
+
