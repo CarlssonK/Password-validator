@@ -41,43 +41,61 @@ $('.container').on('mousedown', function(e) {
 
 
 // Script for function
-
+let userPassword;
+let accepted = 0;
 // When clicking submit check if it hits minimum requiments
-let userPassword = $("#password-input").val()
+$("#enter").click(function() {
+  userPassword = $("#password-input").val()
+
+  // Check password LENGTH
+  if ($("#password-input").val().length >= 5 && $("#password-input").val().length <= 128) {
+    console.log("Accepted")
+    accepted++;
+  } else {
+    console.log("Password too weak")
+  }
+
+  // Check password number
+  if (/\d/.test(userPassword) === true) {
+    console.log("Accepted")
+    accepted++;
+  } else {
+    console.log("Password too weak")
+  }
+
+  // Check password UPPERCASE LETTER
+  if (/[A-Z]/.test(userPassword) === true) {
+    console.log("Accepted")
+    accepted++;
+  } else {
+    console.log("Password too weak")
+  }
+
+  // Check password SPECIAL character
+  if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(userPassword) === true) {
+    console.log("Accepted")
+    accepted++;
+  } else {
+    console.log("Password too weak")
+  }
+
+  // Check password can't contain Spaces
+  if (/ /.test(userPassword) === true) {
+    accepted--;
+    console.log("Can't contain spaces")
+  }
+
+  if (accepted === 4) {
+    $(".container").css("border", "2px solid green")
+  } else {
+    $(".container").css("border", "2px solid red")
+  }
+
+});
 
 
-// Check password LENGTH
-if ($("#password-input").val().length >= 5 && $("#password-input").val().length <= 128) {
-  console.log("Accepted")
-} else {
-  console.log("Password too weak")
-}
 
-// Check password a number
-if (/\d/.test(userPassword) === true) {
-  console.log("Accepted")
-} else {
-  console.log("Password too weak")
-}
 
-// Check password UPPERCASE LETTER
-if (/[A-Z]/.test(userPassword) === true) {
-  console.log("Accepted")
-} else {
-  console.log("Password too weak")
-}
-
-// Check password SPECIAL character
-if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(userPassword) === true) {
-  console.log("Accepted")
-} else {
-  console.log("Password too weak")
-}
-
-// Check password can't contain Spaces
-if (/ /.test(userPassword) === true) {
-  console.log("Can't contain spaces")
-}
 
 
 
