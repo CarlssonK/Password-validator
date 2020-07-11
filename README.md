@@ -9,3 +9,5 @@ Input your password to find out if it meets the following requirements:
 * **Needs at least one uppercase letter**
 * **Needs at least one special character**
 * **Can't contain spaces**
+
+Link to website: https://carlssonk.github.io/Password-validator/
