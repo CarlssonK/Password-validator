@@ -10,6 +10,15 @@ html {
 
 body {
   background-color: rgb(5, 5, 5);
+  position: relative;
+  width: 100%;
+}
+
+/* HIDE ELEMENT */
+.hide-element {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0px,0px,0px,0px) !important;
 }
 
 .container {
@@ -22,11 +31,12 @@ body {
   border: 2px solid white;
   border-radius: 4px;
   padding: 24px;
+  margin: 0 auto;
 }
 
 #label-container {
   position: absolute;
-  width: 90%;
+  width: 100%;
   top: -14px;
 }
 
@@ -50,39 +60,74 @@ body {
   border-radius: 100%;
   font-size: 12px;
   position: absolute;
-  margin-left: 35px;
+  margin-left: 12px;
   margin-top: 3px;
+  z-index: 2;
+}
+#label-container i:hover {
+  border: 2px solid rgb(0, 150, 255);
+}
+#label-container i:active {
+  font-size: 10px;
 }
 
 label {
   font-family: 'VT323', monospace;
   background-color: rgb(5, 5, 5);
   padding: 0px 8px;
+  margin-left: 18px;
   font-size: 24px;
   color: white;
 }
 
+#hoverBox {
+  position: absolute;
+  width: 270px;
+  height: 140px;
+  top: -155px;
+  right: -288px;
+  border-radius: 4px 4px 3px 0px;
+  opacity: 0;
+  background-color: green;
+  z-index: 2;
+}
+
 #info-box {
   position: absolute;
-  width: 200px;
-  height: 100px;
-  background-color: #FFF;
-  top: -115px;
-  right: -214px;
-  border-radius: 3px 3px 3px 0px;
+  width: 270px;
+  height: 140px;
+  border: 2px solid white;
+  top: -155px;
+  right: -265px;
+  border-radius: 4px 4px 3px 0px;
+  opacity: 0;
 }
 
 #info-box:before{
   content: "";
   position: absolute;
-  bottom: -20px;
-  left: 0;
-  /* transform: rotate(-90deg); */
+  bottom: -22px;
+  left: -2px;
   z-index: 1;
   border: solid 10px transparent;
   border-top-color: #FFF;
 }
 
+#info-box ul {
+  list-style-type: square;
+  width: 100%;  
+  padding: 4px;
+  margin: 0;
+  color: white;
+}
+#info-box li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+  padding: 0;
+  margin: 6px 0px 6px 0px;
+  font-weight: 600;
+}
 
 #input-container {
   position: relative;
@@ -146,11 +191,47 @@ input {
   border-top: 2px solid rgba(0, 0, 0, 0);
   border-radius: 0px 0px 4px 4px;
   color: white;
-  background-color: black;
+  background-color: rgb(5, 5, 5);
   padding: 0px 24px 8px 24px;
+  outline: none;
 }
 
 #enter:hover {
-  border-top: 2px solid white;
+  border-top: 2px solid rgba(0, 0, 0, 0);
+  bottom: -38px;
   transition: 20ms;
+  padding: 2px 24px 8px 24px;
+}
+#enter:active {
+  font-size: 22px;
+  bottom: -36px;
+  margin-right: 26px;
+}
+
+
+@media all and (max-width: 1010px) {
+  #info-box {
+    right: -11px;
+    border-radius: 4px 4px 0px 3px;
+  }
+  #info-box:before{
+    left: 252px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .container {
+    width: calc(100% - 48px);
+    margin: 0;
+    padding: 24px;
+  }
+
+  #info-box {
+    width: 100%;
+    right: 0;
+  }
+
+  #label-container i {
+    margin-left: 2px;
+  }
 }
