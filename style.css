@@ -36,7 +36,7 @@ body {
 
 #label-container {
   position: absolute;
-  width: 100%;
+  width: 105%;
   top: -14px;
 }
 
@@ -75,7 +75,7 @@ label {
   font-family: 'VT323', monospace;
   background-color: rgb(5, 5, 5);
   padding: 0px 8px;
-  margin-left: 18px;
+  margin-left: 28px;
   font-size: 24px;
   color: white;
 }
@@ -98,7 +98,7 @@ label {
   height: 140px;
   border: 2px solid white;
   top: -155px;
-  right: -265px;
+  right: -253px;
   border-radius: 4px 4px 3px 0px;
   opacity: 0;
 }
@@ -209,9 +209,9 @@ input {
 }
 
 
-@media all and (max-width: 1010px) {
+@media all and (max-width: 1030px) {
   #info-box {
-    right: -11px;
+    right: 0px;
     border-radius: 4px 4px 0px 3px;
   }
   #info-box:before{
@@ -228,10 +228,18 @@ input {
 
   #info-box {
     width: 100%;
-    right: 0;
+    right: 0px;
+  }
+
+  #label-container {
+    width: 100%;
   }
 
   #label-container i {
     margin-left: 2px;
+  }
+
+  label {
+    margin-left: 18px;
   }
 }
